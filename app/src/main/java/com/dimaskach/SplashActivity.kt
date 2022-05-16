@@ -22,7 +22,11 @@ class SplashActivity : AppCompatActivity() {
             override fun onFinish() {
                 startActivity(Intent(this@SplashActivity, MainActivity::class.java))
             }
-
         }.start()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        timer.cancel()
     }
 }
