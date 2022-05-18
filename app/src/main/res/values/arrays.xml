@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="exercise">
-        <item>Relax|20|fitnes_bg_black.jpeg</item> <!-- 0 -->
-        <item>gantelia|x10|gantelia.gif</item> <!-- 1 -->
-        <item>all_body|x10|helsy_all.gif</item> <!-- 2 -->
-        <item>Koleno v duh|x10|kolenom_v_dux.gif</item> <!-- 3 -->
-        <item>Noga lokot|x10|noga_lokot.gif</item> <!-- 4 -->
-        <item>Pni kota nogoi|x10|noga_lokot_pni_kota.gif</item> <!-- 5 -->
-        <item>Noga v bochiny|x10|noga_v_bochiny.gif</item> <!-- 6 -->
-        <item>Noga v litso|x10|noga_v_litso.gif</item> <!-- 7 -->
-        <item>Pni styl|x10|pni_styl.gif</item> <!-- 8 -->
-        <item>Ruka v zad|x10|ruka_vzad.gif</item> <!-- 9 -->
-        <item>Kto tam|x10|skrutaya_travma.gif</item> <!-- 10 -->
-        <item>Idi syda blya|x10|syda.gif</item> <!-- 11 -->
-        <item>Chasiki|x10|tik_tak_noga.gif</item> <!-- 12 -->
+        <item>Relax|30|fitnes_bg_black.jpeg</item> <!-- 0 -->
+        <item>gantelia|30|gantelia.gif</item> <!-- 1 -->
+        <item>all_body|30|helsy_all.gif</item> <!-- 2 -->
+        <item>Koleno v duh|30|kolenom_v_dux.gif</item> <!-- 3 -->
+        <item>Noga lokot|30|noga_lokot.gif</item> <!-- 4 -->
+        <item>Pni kota nogoi|30|noga_lokot_pni_kota.gif</item> <!-- 5 -->
+        <item>Noga v bochiny|30|noga_v_bochiny.gif</item> <!-- 6 -->
+        <item>Noga v litso|30|noga_v_litso.gif</item> <!-- 7 -->
+        <item>Pni styl|30|pni_styl.gif</item> <!-- 8 -->
+        <item>Ruka v zad|30|ruka_vzad.gif</item> <!-- 9 -->
+        <item>Kto tam|30|skrutaya_travma.gif</item> <!-- 10 -->
+        <item>Idi syda blya|30|syda.gif</item> <!-- 11 -->
+        <item>Chasiki|30|tik_tak_noga.gif</item> <!-- 12 -->
     </string-array>
     <string-array name="day_exercises">
         <item>1,0,3,0,5,0,7,0,9,0,11,0,2,0,4,0,6,0,8,0,10,0,12</item>  <!-- Day 1 -->

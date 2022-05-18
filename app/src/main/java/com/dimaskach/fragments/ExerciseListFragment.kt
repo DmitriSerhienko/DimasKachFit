@@ -14,6 +14,7 @@ import com.dimaskach.adapters.DaysAdapter
 import com.dimaskach.adapters.ExerciseAdapter
 import com.dimaskach.databinding.ExercisesListFragmentBinding
 import com.dimaskach.databinding.FragmentDaysBinding
+import com.dimaskach.utils.FragmentManager
 import com.dimaskach.utils.MainViewModel
 
 
@@ -43,6 +44,10 @@ class ExerciseListFragment : Fragment() {
         adapter = ExerciseAdapter()
         rcViewEx.layoutManager = LinearLayoutManager(activity)
         rcViewEx.adapter = adapter
+        bStart.setOnClickListener {
+            FragmentManager.setFragment(WaitingFragment.newInstance(),
+                activity as AppCompatActivity)
+        }
     }
     companion object {
         @JvmStatic

@@ -3,8 +3,7 @@
     <string name="slogan">Мій шлях до ідеалу!</string>
     <string name="day">" День: "</string>
     <string name="exercise">" вправи</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
-
+    <string name="waiting_message">Вправи почнуться через:</string>
+    <string name="start">Старт</string>
+    <string name="next">Наступна вправа</string>
 </resources>
