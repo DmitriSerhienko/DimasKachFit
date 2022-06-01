@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,7 +21,8 @@ import com.dimaskach.utils.MainViewModel
 
 class DaysFragment : Fragment(), DaysAdapter.Listener {
     private lateinit var binding: FragmentDaysBinding
-    private val model : MainViewModel by activityViewModels()
+    private val model: MainViewModel by activityViewModels()
+    private var ab: ActionBar? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,22 +40,24 @@ class DaysFragment : Fragment(), DaysAdapter.Listener {
 
     private fun initRcView() = with(binding) {
         val adapter = DaysAdapter(this@DaysFragment)
+        ab = (activity as AppCompatActivity).supportActionBar
+        ab?.title = getString(R.string.days)
         rcViewDays.layoutManager = LinearLayoutManager(activity as AppCompatActivity)
         rcViewDays.adapter = adapter
         adapter.submitList(fillDaysArray())
     }
 
-    private fun fillDaysArray(): ArrayList<DayModel>{
+    private fun fillDaysArray(): ArrayList<DayModel> {
         val tArray = ArrayList<DayModel>()
-        resources.getStringArray(R.array.day_exercises).forEach{
+        resources.getStringArray(R.array.day_exercises).forEach {
             tArray.add(DayModel(it, false))
         }
         return tArray
     }
 
     private fun fillExerciseList(day: DayModel) {
-        val tempList = ArrayList<ExerciseModel> ()
-        day.exercises.split(",").forEach{
+        val tempList = ArrayList<ExerciseModel>()
+        day.exercises.split(",").forEach {
             val exerciseList = resources.getStringArray(R.array.exercise)
             val exercise = exerciseList[it.toInt()]
             val exerciseArray = exercise.split("|")
