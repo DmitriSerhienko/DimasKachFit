@@ -17,4 +17,6 @@ class MainViewModel : ViewModel(){
     fun getExerciseCount(): Int{
         return pref?.getInt(currentDay.toString(), 0) ?: 0
     }
+
+
 }
