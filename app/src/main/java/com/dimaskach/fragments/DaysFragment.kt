@@ -50,7 +50,7 @@ class DaysFragment : Fragment(), DaysAdapter.Listener {
     private fun fillDaysArray(): ArrayList<DayModel> {
         val tArray = ArrayList<DayModel>()
         resources.getStringArray(R.array.day_exercises).forEach {
-            tArray.add(DayModel(it, false))
+            tArray.add(DayModel(it, 0, false))
         }
         return tArray
     }
@@ -61,7 +61,7 @@ class DaysFragment : Fragment(), DaysAdapter.Listener {
             val exerciseList = resources.getStringArray(R.array.exercise)
             val exercise = exerciseList[it.toInt()]
             val exerciseArray = exercise.split("|")
-            tempList.add(ExerciseModel(exerciseArray[0], exerciseArray[1], exerciseArray[2]))
+            tempList.add(ExerciseModel(exerciseArray[0], exerciseArray[1], false, exerciseArray[2]))
         }
         model.mutableListExercise.value = tempList
     }
@@ -73,6 +73,7 @@ class DaysFragment : Fragment(), DaysAdapter.Listener {
 
     override fun onClick(day: DayModel) {
         fillExerciseList(day)
+        model.currentDay = day.dayNumber
         FragmentManager.setFragment(ExerciseListFragment.newInstance(),
             activity as AppCompatActivity)
     }

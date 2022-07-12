@@ -20,7 +20,7 @@ class DaysAdapter(var listener: Listener) : ListAdapter<DayModel, DaysAdapter.Da
             val exCounter = day.exercises.split(",").size.toString() +
                     root.context.getString(R.string.exercise)
             tvExCounter.text = exCounter
-            itemView.setOnClickListener { listener.onClick(day) }
+            itemView.setOnClickListener { listener.onClick(day.copy(dayNumber = adapterPosition + 1 )) }
         }
     }
 
