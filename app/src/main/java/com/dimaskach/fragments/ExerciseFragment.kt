@@ -36,6 +36,7 @@ class ExerciseFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        exerciseCounter = model.getExerciseCount()
         ab = (activity as AppCompatActivity).supportActionBar
         ab?.title = getString(R.string.working)
         model.mutableListExercise.observe(viewLifecycleOwner) {
@@ -64,7 +65,7 @@ class ExerciseFragment : Fragment() {
         imMain.setImageDrawable(GifDrawable(root.context.assets, exercise.image))
         tvName.text = exercise.name
         val title = "$exerciseCounter / ${exList?.size} "
-        ab?.title
+        ab?.title = title
     }
 
     private fun setExerciseType(exercise: ExerciseModel){
@@ -110,6 +111,7 @@ class ExerciseFragment : Fragment() {
 
     override fun onDetach() {
         super.onDetach()
+        model.savePref(model.currentDay.toString(), exerciseCounter - 1)
         timer?.cancel()
     }
 
