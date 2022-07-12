@@ -14,7 +14,7 @@ import com.dimaskach.utils.FragmentManager
 import com.dimaskach.utils.TimeUtil
 
 
-const val COUNT_DOWN_TIMER = 11000L
+const val COUNT_DOWN_TIMER = 5000L
 
 class WaitingFragment : Fragment() {
     private lateinit var binding: WaitingFragmentBinding
