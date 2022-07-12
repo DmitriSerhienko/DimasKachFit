@@ -38,7 +38,7 @@ class WaitingFragment : Fragment() {
     }
 
     private fun stareTimer() = with(binding) {
-        timer = object : CountDownTimer(COUNT_DOWN_TIMER, 10) {
+        timer = object : CountDownTimer(COUNT_DOWN_TIMER, 5) {
             override fun onTick(restTime: Long) {
                 tvTimer.text = TimeUtil.getTime(restTime)
                 progBar.progress = restTime.toInt()
