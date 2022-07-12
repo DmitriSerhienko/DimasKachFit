@@ -53,6 +53,9 @@ class DaysFragment : Fragment(), DaysAdapter.Listener {
             tArray.add(DayModel(it, 0, false))
         }
         return tArray
+
+
+
     }
 
     private fun fillExerciseList(day: DayModel) {
