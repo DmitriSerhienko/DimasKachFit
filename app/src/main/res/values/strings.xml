@@ -3,7 +3,7 @@
     <string name="slogan">Мій шлях до ідеалу!</string>
     <string name="day">" День: "</string>
     <string name="days">" Дні тренувань "</string>
-    <string name="exercise">" вправи</string>
+    <string name="exercise">" вправа</string>
     <string name="exercises">Вправи </string>
     <string name="working">Їбашимо </string>
     <string name="waiting_message">Вправи почнуться через:</string>
@@ -11,5 +11,7 @@
     <string name="next">Наступна вправа</string>
     <string name="done">Юхуху!!!</string>
     <string name="waiting">Готуємось до пекла</string>
+    <string name="rest">Залишилось: </string>
+    <string name="rest_days">днів</string>
     <string name="dayoff">Юпппі, я це зробив!!!</string>
 </resources>

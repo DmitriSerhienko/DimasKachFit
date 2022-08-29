@@ -9,7 +9,6 @@ import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.dimaskach.MainActivity
 import com.dimaskach.R
 import com.dimaskach.adapters.DayModel
 import com.dimaskach.adapters.DaysAdapter
@@ -49,13 +48,27 @@ class DaysFragment : Fragment(), DaysAdapter.Listener {
 
     private fun fillDaysArray(): ArrayList<DayModel> {
         val tArray = ArrayList<DayModel>()
+        var daysDoneCounter = 0
         resources.getStringArray(R.array.day_exercises).forEach {
-            tArray.add(DayModel(it, 0, false))
+            model.currentDay++
+            val exCounter = it.split(",").size
+
+            tArray.add(DayModel(it, 0, model.getExerciseCount() == exCounter))
         }
+        binding.pBar.max = tArray.size
+        tArray.forEach{
+            if(it.isDone) daysDoneCounter++
+        }
+        updateRestDays(tArray.size - daysDoneCounter, tArray.size)
         return tArray
 
+    }
 
+    private fun updateRestDays(restDays : Int, days: Int) = with(binding){
 
+        val rDays = getString(R.string.rest) + " $restDays " + getString(R.string.rest_days)
+        tvRestDays.text = rDays
+        pBar.progress = days - restDays
     }
 
     private fun fillExerciseList(day: DayModel) {

@@ -21,6 +21,7 @@
             android:id="@+id/imMain"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginBottom="1dp"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/fitnes_bg" />
     </androidx.cardview.widget.CardView>
@@ -95,23 +96,26 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="1dp">
 
             <TextView
                 android:id="@+id/tvNextName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
                 android:text="TextView"
                 android:textColor="@color/blue"
-                android:textSize="20sp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/imNext"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginEnd="1dp"
                 app:srcCompat="@drawable/fitnes_bg_black" />
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -120,5 +124,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintGuide_percent="0.68" />
 </androidx.constraintlayout.widget.ConstraintLayout>
