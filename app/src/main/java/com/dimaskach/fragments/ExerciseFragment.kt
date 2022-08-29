@@ -23,6 +23,7 @@ class ExerciseFragment : Fragment() {
     private var exerciseCounter = 0
     private var exList: ArrayList<ExerciseModel>? = null
     private var ab: ActionBar? = null
+    private var currentDay = 0
     private val model: MainViewModel by activityViewModels()
 
 
@@ -36,6 +37,7 @@ class ExerciseFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        currentDay = model.currentDay
         exerciseCounter = model.getExerciseCount()
         ab = (activity as AppCompatActivity).supportActionBar
         ab?.title = getString(R.string.working)
@@ -112,7 +114,7 @@ class ExerciseFragment : Fragment() {
 
     override fun onDetach() {
         super.onDetach()
-        model.savePref(model.currentDay.toString(), exerciseCounter - 1)
+        model.savePref(currentDay.toString(), exerciseCounter - 1)
         timer?.cancel()
     }
 
