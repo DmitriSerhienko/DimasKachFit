@@ -13,6 +13,7 @@ import com.dimaskach.adapters.DayModel
 import com.dimaskach.adapters.DaysAdapter
 import com.dimaskach.adapters.ExerciseModel
 import com.dimaskach.databinding.FragmentDaysBinding
+import com.dimaskach.utils.DialogManager
 import com.dimaskach.utils.FragmentManager
 import com.dimaskach.utils.MainViewModel
 
@@ -48,8 +49,16 @@ class DaysFragment : Fragment(), DaysAdapter.Listener {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(item.itemId == R.id.reset){
-            model.pref?.edit()?.clear()?.apply()
-            adapter.submitList(fillDaysArray())
+            DialogManager.showDialog(
+                activity as AppCompatActivity,
+                R.string.reset_days_message,
+                object: DialogManager.Listener{
+                    override fun onClick() {
+                        model.pref?.edit()?.clear()?.apply()
+                        adapter.submitList(fillDaysArray())
+                    }
+                }
+                )
         }
         return super.onOptionsItemSelected(item)
     }
@@ -106,10 +115,27 @@ class DaysFragment : Fragment(), DaysAdapter.Listener {
     }
 
     override fun onClick(day: DayModel) {
-        fillExerciseList(day)
-        model.currentDay = day.dayNumber
-        FragmentManager.setFragment(ExerciseListFragment.newInstance(),
-            activity as AppCompatActivity)
+        if(!day.isDone){
+            fillExerciseList(day)
+            model.currentDay = day.dayNumber
+            FragmentManager.setFragment(ExerciseListFragment.newInstance(),
+                activity as AppCompatActivity)
+        } else{
+            DialogManager.showDialog(
+                activity as AppCompatActivity,
+                R.string.reset_day_message,
+                object: DialogManager.Listener{
+                    override fun onClick() {
+                        model.savePref(day.dayNumber.toString(), 0)
+                        fillExerciseList(day)
+                        model.currentDay = day.dayNumber
+                        FragmentManager.setFragment(ExerciseListFragment.newInstance(),
+                            activity as AppCompatActivity)
+                    }
+                }
+            )
+        }
+
     }
 
 

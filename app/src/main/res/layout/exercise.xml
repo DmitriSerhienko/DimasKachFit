@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#7BCBD5">
+    android:background="@color/blue_bg">
 
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
@@ -49,7 +49,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="TextView"
-                android:textColor="@color/blue"
+                android:textColor="@color/blue_dark"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -58,8 +58,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="00:30"
-                android:textColor="@color/red"
-                android:textSize="54sp" />
+                android:textColor="@color/black_light"
+                android:textSize="54sp"
+                android:textStyle="bold" />
 
             <ProgressBar
                 android:id="@+id/progressBar"
@@ -67,7 +68,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp" />
+                android:layout_marginEnd="16dp"
+                android:scaleY="2" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -77,6 +79,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
         android:text="@string/next"
+        android:textColor="@color/orange"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/cardView3"
         app:layout_constraintHorizontal_bias="0.0"
@@ -105,7 +108,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:text="TextView"
-                android:textColor="@color/blue"
+                android:textColor="@color/blue_dark"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#90A5E6">
+    android:background="@color/blue_bg">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcViewEx"
@@ -24,6 +24,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
         android:text="@string/start"
+        android:textColor="@color/orange"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

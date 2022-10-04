@@ -15,4 +15,8 @@
     <string name="rest_days">днів</string>
     <string name="reset">Скинути прогрес</string>
     <string name="dayoff">Юпппі, я це зробив!!!</string>
+    <string name="alert">Увага!</string>
+    <string name="back">Відмінити</string>
+    <string name="reset_day_message">Ви хочете стерти скинути поточний день та повторити вправи?</string>
+    <string name="reset_days_message">Ви хочете стерти весть прогрес тренувань?</string>
 </resources>
