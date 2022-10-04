@@ -13,5 +13,6 @@
     <string name="waiting">Готуємось до пекла</string>
     <string name="rest">Залишилось: </string>
     <string name="rest_days">днів</string>
+    <string name="reset">Скинути прогрес</string>
     <string name="dayoff">Юпппі, я це зробив!!!</string>
 </resources>
